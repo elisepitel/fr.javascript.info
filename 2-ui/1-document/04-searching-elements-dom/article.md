@@ -139,21 +139,23 @@ En d'autres termes, le resultat est le même que pour `elem.querySelectorAll(css
 ## matches
 
 Previous methods were searching the DOM.
-Les methodes précédentes cherchaient dans le DOM.
+Les methodes que nous avons vu précedement cherchaient dans le DOM.
 
 The [elem.matches(css)](http://dom.spec.whatwg.org/#dom-element-matches) does not look for anything, it merely checks if `elem` matches the given CSS-selector. It returns `true` or `false`.
-
+L'élément [elem.matches(css)](http://dom.spec.whatwg.org/#dom-element-matches) ne recherche pour rien en particulier, il vérifie simplement que `elem` matche ou non avec le sélecteur CSS donné. Il retourne `true` ou `false`.
 
 The method comes in handy when we are iterating over elements (like in an array or something) and trying to filter out those that interest us.
+Cette méthode est pratique lorsque l'on répète plusieurs fois un même élément (comme dans une array par exemple) et lorsque nous essayons de filter par ce qui nous intéresse le plus.
 
 For instance:
-
+Par exemple:
 ```html run
 <a href="http://example.com/file.zip">...</a>
 <a href="http://ya.ru">...</a>
 
 <script>
   // can be any collection instead of document.body.children
+  // il peut s'agir de n'importe quelle collection à l'exception de document.body.children
   for (let elem of document.body.children) {
 *!*
     if (elem.matches('a[href$="zip"]')) {
