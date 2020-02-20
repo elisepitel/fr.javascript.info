@@ -169,12 +169,15 @@ Par exemple:
 ## closest
 
 *Ancestors* of an element are: parent, the parent of parent, its parent and so on. The ancestors together form the chain of parents from the element to the top.
+Les *ancestors* d'un élément sont: un parent, le parent d'un parent, son parent et ainsi de suite. Les ancestors ensemle forment une chaîne de parents, en partant de l'élément jusqu'au sommet. 
 
 The method `elem.closest(css)` looks the nearest ancestor that matches the CSS-selector. The `elem` itself is also included in the search.
+La méthode `elem.closest(css)` recherche pour l'ancêtre le plus proche qui matche avec le selecteur CSS. L' `elem` lui-même est inclu dans la recherche.
 
 In other words, the method `closest` goes up from the element and checks each of parents. If it matches the selector, then the search stops, and the ancestor is returned.
+En d'autres termes, la methode `closest` va, en partant de l'élément, de ses parents les plus proches à ses parents les plus lointain. Si un élément matche avec le selecteur, alors la recherche s'arrête et le parent est retourné.
 
-For instance:
+Par example:
 
 ```html run
 <h1>Contents</h1>
@@ -192,7 +195,7 @@ For instance:
   alert(chapter.closest('.book')); // UL
   alert(chapter.closest('.contents')); // DIV
 
-  alert(chapter.closest('h1')); // null (because h1 is not an ancestor)
+  alert(chapter.closest('h1')); // null (car h1 n'est pas un ancêtre)
 </script>
 ```
 
